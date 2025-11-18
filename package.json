@@ -1,0 +1,11 @@
+{
+  "name": "special-pancake",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rolling balance mini-game with canvas-rendered physics",
+  "scripts": {
+    "start": "echo 'No dev server configured'",
+    "build": "echo 'No build configured'",
+    "test": "echo 'No automated tests configured'"
+  }
+}

@@ -45,6 +45,11 @@
     gap: 12px;
     margin-bottom: 12px;
   }
+
+  .header-actions {
+    display: flex;
+    gap: 10px;
+  }
   
   h1 {
     margin: 0;
@@ -72,6 +77,29 @@
     transform: translateY(-1px);
     box-shadow: 0 10px 24px rgba(91, 209, 255, 0.33);
   }
+
+  .ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5f0ff;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.24);
+  }
+
+  .ghost:hover {
+    transform: translateY(-1px);
+    border-color: rgba(91, 209, 255, 0.55);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .ghost.active {
+    border-color: rgba(91, 209, 255, 0.75);
+    color: #b7e7ff;
+  }
   
   .game-canvas {
     width: 100%;
@@ -79,6 +107,82 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0d1b2a;
     display: block;
+  }
+
+  .selector-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 14px 0 12px;
+  }
+
+  .selector {
+    flex: 2;
+    min-width: 320px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .selector h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+
+  .ball-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ball-option {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  .ball-option.active {
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .start-card {
+    flex: 1;
+    min-width: 240px;
+    background: linear-gradient(135deg, rgba(91, 209, 255, 0.15), rgba(177, 140, 255, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 12px 14px;
+    color: #dfe8ff;
+  }
+
+  .start-copy {
+    margin: 0 0 10px;
+    color: #cddbf5;
+  }
+
+  .primary {
+    background: linear-gradient(120deg, #5bd1ff, #b18cff);
+    color: #0b1320;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+    box-shadow: 0 8px 18px rgba(91, 209, 255, 0.25);
+    width: 100%;
+  }
+
+  .primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(91, 209, 255, 0.33);
   }
   
   .info {
@@ -104,12 +208,17 @@
     background: rgba(91, 209, 255, 0.12);
     color: #5bd1ff;
   }
-  
+
   .status.lost {
     background: rgba(255, 146, 146, 0.14);
     color: #ff9a9a;
   }
-  
+
+  .status.menu {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f7ff;
+  }
+
   .message {
     margin-top: 10px;
     color: #c8d8f0;
@@ -121,9 +230,18 @@
       flex-direction: column;
       align-items: flex-start;
     }
-  
+
     .reset {
       width: 100%;
+    }
+
+    .header-actions {
+      width: 100%;
+      justify-content: stretch;
+    }
+
+    .header-actions > * {
+      flex: 1;
     }
   }
   
